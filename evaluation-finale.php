@@ -18,6 +18,7 @@ function afficherBadge($prenom, $statut){
 }
 if (isset($prenom)){
     echo "Le formulaire est prêt a être envoyer <br>";
+    echo "--------------------------------------------------------------------------------------------------- <br>";
 }
 if ($age >= $ageMinimum && $code == $motDePasseAdmin){
     $annuaire[]= $prenom;
@@ -53,14 +54,17 @@ if ($age >= $ageMinimum && $code == $motDePasseAdmin){
     <?php
     foreach ($annuaire as $prenom){
         afficherBadge($prenom, "Employer");
+         echo "--------------------------------------------------------------------------------------------------- <br>";
 
     }
     for($i=0; $i<3; $i++){
         echo "Emplacement bureau vide disponible...<br>";
+        echo "--------------------------------------------------------------------------------------------------- <br>";
     }
     $chargement=0;
     while ($chargement < 2){
        echo "Synchronisation de la base de données...<br>";
+        echo "--------------------------------------------------------------------------------------------------- <br>";
        $chargement++;
     }
     ?>
