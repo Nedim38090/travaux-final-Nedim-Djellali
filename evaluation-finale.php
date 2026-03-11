@@ -20,12 +20,13 @@ if (isset($prenom)){
     echo "Le formulaire est prêt a être envoyer <br>";
     echo "--------------------------------------------------------------------------------------------------- <br>";
 }
-if ($age >= $ageMinimum && $code == $motDePasseAdmin){
-    $annuaire[]= $prenom;
-    echo "Bienvenue, $prenom a été ajouté !";
 
-}elseif ($age <= $ageMinimum || $statut == $statut[1]){
+if ($age <= $ageMinimum || $statut == "Stagiaire"){
     echo "Erreur : Accès non autorisé pour ce profil.";
+} elseif ($age >= $ageMinimum && $code == $motDePasseAdmin){
+        $annuaire[]= $prenom;
+        echo "Bienvenue, $prenom a été ajouté !";
+
 }else {
     echo "Erreur : Mot de passe administrateur incorrect.";
 }
